@@ -1,5 +1,4 @@
 // Raytracing.cpp : Defines the entry point for the console application.
-//
 
 #include "stdafx.h"
 #include <cmath>
@@ -88,8 +87,6 @@ Vec3 ray_color(Ray &ray) {
 			    	- intersection_to_light.direction;
 			    Vec3 vector_v = -ray.direction;
 
-				//TODO: corrigir reflexão e shininess, que é a potência. Depois fazer clamping
-				// da potencia em 1 e usar isso como o que eu chamava de coef de reflexão.
 			    color += light.color * obj->specular_coef * obj->color
 			    	* std::pow(Vec3::dot(vector_r, vector_v), SHININESS);
 		    }
@@ -320,8 +317,6 @@ void display() {
 
 
 void reshape(int w, int h) {
-    //scene.camera.width = w;
-    //scene.camera.height = h;
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -340,7 +335,7 @@ void main(int argc, char **argv) {
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(WIDTH, HEIGHT);
 	glutInitWindowPosition(50, 50);
-	glutCreateWindow("Desafio Raytracing - Felipe de A. Mello Pereira");
+	glutCreateWindow("Raytracing - Felipe de A. Mello Pereira");
 	init_config();
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
