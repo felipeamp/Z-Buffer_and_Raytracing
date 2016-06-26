@@ -95,11 +95,6 @@ Vec3 Vec3::normalize() {
 }
 
 Vec3 Vec3::cross(Vec3 v1, Vec3 v2) {
-	/*std::cout << "v1 = (" << v1[0] << ', ' << v1[1] << ', ' << v1[2] << ')' << std::endl;
-	std::cout << "v2 = (" << v2[0] << ', ' << v2[1] << ', ' << v2[2] << ')' << std::endl;
-	std::cout << "first coord = " << v1[1] * v2[2] - v2[2] * v1[1] << std::endl;
-	std::cout << "second coord = " << v1[2] * v2[0] - v2[0] * v1[2] << std::endl;
-	std::cout << "third coord = " << v1[1] * v2[2] - v2[2] * v1[1] << std::endl;*/
 	return Vec3(
 		v1[1] * v2[2] - v2[1] * v1[2],
 		v1[2] * v2[0] - v2[2] * v1[0],

@@ -25,8 +25,6 @@ public:
 	GLfloat len();
 	Vec3 normalize();
 
-	//GLfloat* to4();
-
 	static Vec3 cross(Vec3, Vec3);
 	static GLfloat dot(Vec3, Vec3);
 
