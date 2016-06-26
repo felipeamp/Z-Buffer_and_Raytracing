@@ -54,12 +54,11 @@ Ray reflect_ray(Ray ray) {
 }
 
 Vec3 ray_color(Ray &ray) {
+    auto obj = scene.objects[ray.object_index];
     Vec3 color = Vec3(0.0, 0.0, 0.0);
+    color += scene.ambient_color * obj->diffuse_coef * obj->color;
     for (size_t light_index = 0; light_index < scene.lights.size(); ++light_index) {
         Light light = scene.lights[light_index];
-        auto obj = scene.objects[ray.object_index];
-        color += scene.ambient_color * obj->diffuse_coef * obj->color;
-        
         // Search for occlusion
         Vec3 intersection = ray.origin + ray.direction * ray.length;
         Ray intersection_to_light = Ray(intersection, light.position - intersection);
