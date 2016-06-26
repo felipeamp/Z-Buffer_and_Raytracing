@@ -1,4 +1,4 @@
-# Z-Buffer_and_Raytracing
+# Z-Buffer and Raytracing
 
 This code was created for the 4th project of PUC-Rio's INF2608 (Fundamentals of Computer Graphics).
 
